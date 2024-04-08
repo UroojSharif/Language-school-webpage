@@ -1,0 +1,190 @@
+@import "./parital/reset";
+@import "./parital/variables";
+@import "./parital/mixins";
+
+#main-nav {
+  background: $deepBlue;
+  ul {
+    width: 100%;
+  }
+  li {
+    float: left;
+    width: calc(100% / 5);
+    @include mQ(600px) {
+      width: 100%;
+    }
+  }
+  a {
+    color: $offWhite;
+    text-decoration: none;
+    padding: 16px;
+    display: block;
+    text-align: center;
+    &:hover {
+      background: lighten($deepBlue, 5);
+    }
+  }
+
+  @include clearFix;
+}
+
+section h1 {
+  margin: 40px 0;
+  text-align: center;
+  text-transform: uppercase;
+  color: $deepBlue;
+  font-size: $sectionHeading;
+}
+
+#about {
+  h1 {
+    margin-top: 10%;
+  }
+  p {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 20px;
+  }
+}
+#services {
+  h1 {
+    margin-top: 15%;
+  }
+  li {
+    float: left;
+    width: 33.33%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  img {
+    width: 60%;
+    margin: 20px 20%;
+  }
+  a {
+    text-decoration: none;
+    color: $deepBlue;
+    font-weight: bold;
+    &:hover {
+      color: complement($deepBlue);
+    }
+  }
+  @include clearFix;
+  margin-bottom: 60px;
+}
+
+.lead-banner {
+  @include banner;
+  text-align: right;
+}
+
+.lessons-banner {
+  @include banner;
+  text-align: right;
+
+  .title {
+    margin-top: 10%;
+  }
+
+  li {
+    text-transform: uppercase;
+    font-size: 20px;
+    max-width: 500px;
+    margin: 40px 60%;
+  }
+}
+
+#projects {
+  h1 {
+    margin-top: 10%;
+  }
+  ul {
+    li {
+      @include grid(3, 5%);
+      img {
+        width: 100%;
+        height: 250px;
+      }
+    }
+  }
+}
+
+#contact {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  h2 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+  span {
+    color: blue;
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  label {
+    margin: 5px;
+    letter-spacing: 2px;
+    padding: 5px;
+    font-size: 20px;
+  }
+  input {
+    width: 60%;
+  }
+  textarea {
+    margin: 5px;
+    width: 60%;
+  }
+  button {
+    margin-bottom: 20px;
+    padding: 5px;
+    font-weight: bold;
+    width: 100px;
+    &:hover {
+      background-color: $deepBlue;
+      color: $offWhite;
+    }
+  }
+}
+
+footer {
+  p {
+    text-align: center;
+    background: $deepBlue;
+    color: $offWhite;
+    padding: 10px;
+  }
+}
+
+.lead-banner {
+  .title {
+    @include small-screen {
+      font-size: 35px;
+      text-align: start;
+      color: $offWhite;
+      text-align: center;
+      background-color: hsla(0, 0%, 0%, 0.412);
+    }
+  }
+  .sub-title {
+    @include small-screen {
+      display: none;
+    }
+  }
+}
+
+#projects {
+  ul {
+    li {
+      @include small-screen {
+        @include grid(2, 2%);
+      }
+    }
+  }
+}
